@@ -24,19 +24,3 @@ pub fn validate_api_call(
 ) {
   todo
 }
-
-pub fn get_user() -> effect.Effect(msg.Msg) {
-  let url = get_api_url() <> "/api/user"
-
-  let decoder = dynamic.decode1(User, dynamic.field("id", dynamic.int))
-
-  lustre_http.get(url, lustre_http.expect_json(decoder, msg.UserRecieved))
-}
-
-pub fn call(model: model.Model) -> effect.Effect(msg.Msg) {
-  lustre_http.post(
-    get_api_url() <> "/api/call",
-    json.object([#("id", json.int(model.user.id))]),
-    lustre_http.expect_json(msg.message_error_decoder(), msg.ApiCallResponded),
-  )
-}

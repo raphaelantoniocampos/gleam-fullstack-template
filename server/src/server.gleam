@@ -13,7 +13,7 @@ pub fn main() {
 
   let url = case cnf.env {
     config.Development -> "http://localhost:1234"
-    config.Production -> "https://lauraxv.fly.dev"
+    config.Production -> "https://real.example"
   }
   let ctx = Context(static_directory: static_directory(), url: url)
 

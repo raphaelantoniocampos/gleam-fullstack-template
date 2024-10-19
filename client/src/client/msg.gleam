@@ -6,11 +6,6 @@ import lustre_http
 
 pub type Msg {
   OnRouteChange(router.Route)
-  UserRecieved(Result(User, lustre_http.HttpError))
-  UserRequestedApiCall
-  ApiCallResponded(
-    resp_result: Result(MessageErrorResponse, lustre_http.HttpError),
-  )
 }
 
 pub type MessageErrorResponse {

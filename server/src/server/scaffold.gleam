@@ -10,9 +10,10 @@ pub fn page_scaffold() -> Element(a) {
         attribute("content", "width=device-width, initial-scale=1.0"),
         name("viewport"),
       ]),
+      todo as "Edit Title",
       title([], "Title"),
       meta([attribute("content", "Description"), name("description")]),
-      //TODO: Edit Locale
+      todo as "Edit Locale",
       meta([attribute("content", "pt_BR"), attribute("property", "og:locale")]),
       meta([
         attribute("content", "Title"),

@@ -34,7 +34,7 @@ pub fn handle_get(req: Request) {
 pub fn handle_post(req: Request) {
   use body <- wisp.require_json(req)
   case wisp.path_segments(req) {
-    ["api", "users"] -> wisp.not_found()
+    ["api", "example"] -> wisp.not_found()
     _ -> wisp.not_found()
   }
 }
