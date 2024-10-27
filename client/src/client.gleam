@@ -1,3 +1,4 @@
+import client/handle
 import client/model
 import client/msg
 import client/router
@@ -31,6 +32,14 @@ fn on_url_change(_uri: Uri) -> msg.Msg {
 fn update(model: model.Model, msg: msg.Msg) -> #(model.Model, Effect(msg.Msg)) {
   case msg {
     msg.OnRouteChange(route) -> model.update_route(model, route) |> update.none
+    msg.ApiCallResponded(resp_result) ->
+      handle.api_response(
+        model,
+        resp_result,
+        handle.api_call,
+        model.update_all,
+        [effect.none()],
+      )
   }
 }
 

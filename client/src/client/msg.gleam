@@ -1,11 +1,14 @@
+import client/model
 import client/router
-import common.{type User}
 import gleam/dynamic
 import gleam/option.{type Option}
 import lustre_http
 
 pub type Msg {
   OnRouteChange(router.Route)
+  ApiCallResponded(
+    resp_result: Result(MessageErrorResponse, lustre_http.HttpError),
+  )
 }
 
 pub type MessageErrorResponse {
