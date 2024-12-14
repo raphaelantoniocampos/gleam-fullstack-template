@@ -16,6 +16,11 @@ pub type Config {
 }
 
 pub fn read_config() {
+  todo as "create server/.env file containing: \n 
+SECRET_KEY_BASE= \"your wisp secret key\"
+GLEAM_ENV=\"dev or prod\"
+PORT=\"8080 or your port\"
+"
   dot.new()
   |> dot.set_path(".env")
   |> dot.load
