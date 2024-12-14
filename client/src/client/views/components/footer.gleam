@@ -3,6 +3,7 @@ import lustre/element.{type Element, text}
 import lustre/element/html.{a, div, footer, i, p}
 
 pub fn footer_view() -> Element(a) {
+  todo as "Edit footer"
   footer([], [
     div([], [
       div([], [
